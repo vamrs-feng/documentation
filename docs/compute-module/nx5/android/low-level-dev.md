@@ -148,7 +148,7 @@ android12/rockdev $ rm -rf Image
 android12/rockdev $ ln -s Image-${PRODUCT_NAME} Image
 
 # 打包成 RK update 格式镜像
-android12/rockdev $ ./mkupdate_rk356x.sh
+android12/rockdev $ ./mkupdate_rk358x.sh
 
 # 打包成 GPT 格式镜像
 android12/rockdev $ ./android-gpt.sh
