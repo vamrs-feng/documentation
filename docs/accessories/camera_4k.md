@@ -38,6 +38,11 @@ Radxa Camera 4K 是一款适用于 Radxa 产品的高分辨率相机模块，采
 
 - 默认带状电缆长度: 150 mm
 
+## 数据手册
+
+- [Radxa Camera 4K](https://dl.radxa.com/accessories/camera-4k/radxa_camera_4k_product_brief_Revision_1.0.pdf)
+- [SONY IMX415](https://dl.radxa.com/accessories/camera-4k/IMX415-AAQR-C_Datasheet_E19504.pdf)
+
 ## 物理规格
 
 ![Radxa Display 8 HD](/img/accessories/camera-4k-spec-1.webp)
