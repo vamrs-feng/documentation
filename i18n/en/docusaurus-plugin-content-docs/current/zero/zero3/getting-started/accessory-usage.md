@@ -23,4 +23,33 @@ This section focuses on the accessories supported by ZERO 3 and how to use them.
 
 ## Camera
 
-The Radxa ZERO 3 comes with a 22-pin CSI connector. For more information, see [Camera Tutorial](../accessories/camera)
+The Radxa ZERO 3 comes with a 4-lane 22-pin CSI connector.
+
+<table>
+  <tr>
+    <th>Camera Name</th>
+    <th>Sensor Type</th>
+    <th>Resolution</th>
+  </tr>
+  <tr>
+    <td>OKDO 5MP Camera</td>
+    <td>OV5647</td>
+    <td>500 megapixels</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi Camera V2</td>
+    <td>IMX219</td>
+    <td>800 megapixels</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi Camera v1.3</td>
+    <td>OV5647</td>
+    <td>500 megapixels</td>
+  </tr>
+</table>
+
+For more information, see [Camera Tutorial](../accessories/camera)
+
+## PoE HAT
+
+Radxa ZERO 3E supports PoE power supply startup. Please refer to [ZERO 3E PoE HAT](../accessories/3e-poe-hat)

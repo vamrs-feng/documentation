@@ -1,8 +1,8 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 ---
 
-# Radxa ZERO 3E PoE 供电模块
+# ZERO 3E PoE 供电模块
 
 ## 注意事项
 

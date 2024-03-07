@@ -1,8 +1,8 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 ---
 
-# Radxa ZERO 3E PoE HAT Usage
+# ZERO 3E PoE HAT
 
 ## Precaution
 
