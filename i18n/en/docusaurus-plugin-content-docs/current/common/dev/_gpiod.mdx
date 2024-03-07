@@ -130,3 +130,32 @@ sudo apt-get install python3-libgpiod
 
 </TabItem>
 </Tabs>
+
+## Convert vendor gpio to libgpiod
+
+<Tabs queryString="vendorTolibgpiod">
+
+<TabItem value="Rokchip">
+
+- Naming conventions
+
+There are usually 5 groups (also called banks) of GPIOs on the Rockchip platform: GPIO0~GPIO4 (varies from chip to chip), each group has 32 GPIOs.
+Each group of GPIOs is divided into 4 groups, A/B/C/D, with 8 GPIOs in each group (0~7, also called [bank_idx](https://github.com/torvalds/linux/blob/master/include/dt-bindings/pinctrl/)). rockchip.h)). So the GPIOs can be named from GPIO0_A0 to GPIO4_D7.
+Taking GPIO3_C5 as an example, we can deduce that its bank is 3 and its bank_idx is 21, i.e. GPIO3_C5 is the 21st GPIO in group 3.
+
+- Correspondence to libgpiod
+
+The GPIO bank of Rockchip platform corresponds to gpiochip in libgpiod, and bank_idx corresponds to gpio line.
+Take GPIO3_C5 as an example, it is in libgpiod, gpiochip is 3 and line is 21.
+
+</TabItem>
+
+<TabItem value="Amlogic">
+
+Amlogic platform GPIOs are generally defined in [kernel header file](https://github.com/torvalds/linux/blob/master/include/dt-bindings/gpio/).
+Take Amlogic S905 and A311D as an example, these two Socs for example, their GPIOs are defined in [meson-g12a-gpio.h](https://github.com/torvalds/linux/blob/master/include/dt-bindings/gpio/meson-g12a-gpio.h).
+For example, gpiochip of GPIOH_1 is 1 and line is 17.
+
+</TabItem>
+
+</Tabs>
