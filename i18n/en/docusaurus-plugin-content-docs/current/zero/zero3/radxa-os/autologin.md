@@ -1,5 +1,18 @@
-import AutoLogin from "../../../common/radxa-os/\_autologin.mdx";
+---
+sidebar_position: 5
+---
 
-# Auto Login
+# Auto login
 
-<AutoLogin />
+For faster access to the desktop, you can set the desktop to log you in automatically by modifying the `/etc/lightdm/lightdm.conf` file.
+
+```
+sudo vim /etc/lightdm/lightdm.conf
+Find [Seat:*] configured #autologin-user= ,modify this configuration to the user you need to log in as
+
+[Seat:*]
+...
+autologin-user=radxa
+autologin-user-timeout=0
+...
+```
