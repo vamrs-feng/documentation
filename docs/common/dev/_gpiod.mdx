@@ -130,3 +130,32 @@ sudo apt-get install python3-libgpiod
 
 </TabItem>
 </Tabs>
+
+## 将 vendor gpio 转换成 libgpiod
+
+<Tabs queryString="vendorTolibgpiod">
+
+<TabItem value="Rokchip">
+
+- 命名规范
+
+Rockchip 平台的 GPIO 通常有 5 组（也叫做 bank）： GPIO0~GPIO4（不同的芯片会不一样），每组有 32 个 GPIO。
+每组 GPIO 又分为 A/B/C/D 4个小组， 每个小组 8 个 GPIO（0~7，也叫做 [bank_idx](https://github.com/torvalds/linux/blob/master/include/dt-bindings/pinctrl/rockchip.h)）。所以 GPIO 的命名可以从： GPIO0_A0 到 GPIO4_D7。
+以 GPIO3_C5 为例，我们可以推断出，它的 bank 是 3，它的 bank_idx 是 21，即 GPIO3_C5 是第 3 组中的第 21 个 GPIO。 
+
+- 与 libgpiod 对应关系
+
+Rockchip 平台的 GPIO bank 对应 libgpiod 中的 gpiochip， bank_idx 对应 gpio line。
+以 GPIO3_C5 为例，它在 libgpiod 中，gpiochip 为 3， line 为 21。
+
+</TabItem>
+
+<TabItem value="Amlogic">
+
+Amlogic 平台的 GPIO 一般定义在[内核头文件中](https://github.com/torvalds/linux/blob/master/include/dt-bindings/gpio/)。
+以 Amlogic S905 和 A311D 为例，这两个 Soc 为例，其 GPIO 的定义都在 [meson-g12a-gpio.h](https://github.com/torvalds/linux/blob/master/include/dt-bindings/gpio/meson-g12a-gpio.h) 中。
+如 GPIOH_1 的 gpiochip 为 1，line 为 17。
+
+</TabItem>
+
+</Tabs>
