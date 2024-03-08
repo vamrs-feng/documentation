@@ -142,7 +142,7 @@ android12/rockdev $ rm -rf Image
 android12/rockdev $ ln -s Image-${PRODUCT_NAME} Image
 
 #  RkUpdate Image
-android12/rockdev $ ./mkupdate_rk356x.sh
+android12/rockdev $ ./mkupdate_rk358x.sh
 
 # gpt Image
 radxa:rock-android12/rockdev $ ./android-gpt.sh
