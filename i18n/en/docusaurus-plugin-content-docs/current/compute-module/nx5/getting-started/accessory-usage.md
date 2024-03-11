@@ -27,6 +27,8 @@ RADXA NX5 IO comes with two 2-lane CSI interfaces. The following is a list of cu
   </tr>
 </table>
 
+For more information please refer to [raspberry_camera_v2](../accessories/raspberry_camera_v2).
+
 ## WIFI/BT
 
 RADXA NX5 IO has 1 M.2 Key interface. The following is the current list of supported modules:
@@ -45,3 +47,5 @@ RADXA NX5 IO has 1 M.2 Key interface. The following is the current list of suppo
     <td> Intel AX210 wireless module </td>
   </tr>
 </table>
+
+For more information please refer to [wifi_bt_access](../accessories/wifi_bt_access).

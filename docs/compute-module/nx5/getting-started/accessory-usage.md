@@ -27,6 +27,8 @@ RADXA NX5 IO 带有两个 2-lane 的 CSI 接口。以下是目前支持的摄像
   </tr>
 </table>
 
+更多相关信息请参考 [树莓派 Camera v2](../accessories/raspberry_camera_v2)。
+
 ## WIFI/BT
 
 RADXA NX5 IO 带有1个 M.2 Key, 以下是目前支持模组列表：
@@ -45,3 +47,5 @@ RADXA NX5 IO 带有1个 M.2 Key, 以下是目前支持模组列表：
     <td>  Intel AX210 无线模块 </td>
   </tr>
 </table>
+
+更多相关信息请参考 [wifi/bt 配件](../accessories/wifi_bt_access)。
