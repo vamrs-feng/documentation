@@ -8,8 +8,40 @@ sidebar_position: 3
 
 ## 接口总览
 
+<img src="/img/nx5/nx5-io/nx5_io_interface_overview.webp" width="800" alt="nx5_io_interface_overview" />
+
 ## 摄像头
 
-## 显示屏
+RADXA NX5 IO 带有两个 2-lane 的 CSI 接口。以下是目前支持的摄像头列表：
+
+<table>
+  <tr>
+    <th>Camera Name</th>
+    <th>Sensor 型号</th>
+    <th>分辨率</th>
+  </tr>
+  <tr>
+    <td>Raspberry Pi Camera V2</td>
+    <td>IMX219</td>
+    <td>800万像素</td>
+  </tr>
+</table>
 
 ## WIFI/BT
+
+RADXA NX5 IO 带有1个 M.2 Key, 以下是目前支持模组列表：
+
+<table>
+  <tr>
+    <th> 模组名 </th>
+    <th> 描述 </th>
+  </tr>
+  <tr>
+    <td> Radxa Wireless Module A8 </td>
+    <td> Realtek RTL8852BE 的标准 M.2 2230 无线模块  </td>
+  </tr>
+  <tr>
+    <td> AX210 </td>
+    <td>  Intel AX210 无线模块 </td>
+  </tr>
+</table>
