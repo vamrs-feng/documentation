@@ -67,6 +67,7 @@ repos:
           ]
         stages:
           - manual
+        exclude: .github/CODEOWNERS
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v3.16.0
     hooks:
