@@ -48,11 +48,12 @@ static              @xzuoqi @akgnah
 .github             @RadxaYuntian
 .pre-commit-config.* @CodeChenL @RadxaYuntian
 ####################gitown####################
+.github/CODEOWNERS @radxa-docs/Editor
+.gitownrc @CodeChenL
+.cz.toml @CodeChenL
+####################Others####################
 static/img/rock3/Rock3C-bottom-800px.webp @Maycides
 docs/rock3/rock3c/os-config/rsetup.md @u7985
-.gitownrc @CodeChenL
-.github/CODEOWNERS @CodeChenL @nascs
-.cz.toml @CodeChenL
 src/components/CustomDocItem/Footer/styles.module.css @xzuoqi
 i18n/en/docusaurus-plugin-content-docs/current/rock5/rock5b/low-level-dev/README.md @u7985
 i18n/en/docusaurus-plugin-content-docs/current/rock3/rock3a/os-config/rsetup.md @nascs
