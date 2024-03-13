@@ -78,3 +78,85 @@ sudo ./setup.sh update_idbloader ___/dev/sdX_or_/dev/mmcblkX_or_system.img___
 ```
 
 </details>
+
+<details><summary>ROCK 4B 在使用 Manjaro-ARM-minimal-rockpi4b-22.06.img.xz 时系统内内存总大小在重启后可能会变化</summary>
+
+### 现象
+
+- 以 4GB 版本为例，正常时串口启动输出类似以下内容：
+
+```
+U-Boot TPL 2022.04-1 (Apr 21 2022 - 18:07:16)
+Channel 0: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=2048MB
+Channel 1: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=2048MB
+256B stride
+lpddr4_set_rate: change freq to 400000000 mhz 0, 1
+lpddr4_set_rate: change freq to 800000000 mhz 1, 0
+Trying to boot from BOOTROM
+Returning to boot ROM...
+```
+
+- 异常时，串口启动输出所检测到的内存大小不匹配实际值：
+
+```
+U-Boot TPL 2022.04-1 (Apr 21 2022 - 18:07:16)
+Channel 0: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=2048MB
+Channel 1: LPDDR4, 50MHz
+BW=32 Col=9 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=768MB
+no stride
+lpddr4_set_rate: change freq to 400000000 mhz 0, 1
+lpddr4_set_rate: change freq to 800000000 mhz 1, 0
+Trying to boot from BOOTROM
+Returning to boot ROM...
+```
+
+- 您受影响的产品使用的是 Micron 内存。
+- 您所使用的 Manjaro 镜像为：[`Manjaro-ARM-minimal-rockpi4b-22.06.img.xz`](https://github.com/manjaro-arm/rockpi4b-images/releases/download/22.06/Manjaro-ARM-minimal-rockpi4b-22.06.img.xz)
+
+### 原因
+
+旧版本的 `U-Boot` 不支持 Micron 内存，无法正确完成硬件初始化。
+
+### 涉及版本
+
+以下 `U-Boot` 版本已经过瑞莎测试，确认为与 Micron 内存不兼容：
+
+- `U-Boot 2022.04-1 (Apr 21 2022 - 18:07:16 +0000) Manjaro Linux ARM`
+
+受影响的 Micron 内存上有如下丝印：
+
+- IPF47 D9XRR
+
+以下 Micron 内存暂未发现受到此问题影响：
+
+- ISE77 D9WGB
+
+::::caution
+这是一个不完全的列表。如果您发现了有其他受影响的版本或内存型号，请通过最下方的`编辑此页`向我们反馈。
+::::
+
+### 解决方案
+
+Manjaro 不是瑞莎官方支持的操作系统，请联系 Manjaro 来获得更新启动器的帮助。
+
+使用瑞莎官方发布的 Radxa [`rock-4se_debian_bullseye_kde_b38.img.xz`](https://github.com/radxa-build/rock-4se/releases/download/b38/rock-4se_debian_bullseye_kde_b38.img.xz) 时，受影响的内存可以正常识别并工作。
+
+### 绕过方案
+
+::::caution
+Manjaro 不是瑞莎官方支持的操作系统。以下绕过方案仅用于验证用户所遇到的问题并非硬件质量问题，瑞莎不为在其他场景下使用此绕过方案可能导致的问题负责。
+::::
+
+您可以通过以下命令来更新您现有的系统镜像或系统安装设备内的 `U-Boot` 内存初始化代码。此命令也可在正常启动后的 ROCK 4B 内执行。
+
+请注意替换最后一个命令所指定的参数为您想要更新的对象。
+
+```bash
+curl https://dl.radxa.com/rockpi4/troubleshooting/rock-4ab-uboot-2022-manjaro-idbloader.tar.gz | tar xzv
+sudo ./setup.sh update_idbloader ___/dev/sdX_or_/dev/mmcblkX_or_system.img___
+```
+
+</details>

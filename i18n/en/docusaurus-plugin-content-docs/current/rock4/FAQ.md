@@ -77,3 +77,85 @@ sudo ./setup.sh update_idbloader ___/dev/sdX_or_/dev/mmcblkX_or_system.img___
 ```
 
 </details>
+
+<details><summary>ROCK 4B when using Manjaro-ARM-minimal-rockpi4b-22.06.img.xz may show different total memory available after reboot</summary>
+
+### Phenomenon
+
+- Taking the 4GB variant as an example, the serial port boot output looks similar to the following when normal:
+
+```
+U-Boot TPL 2022.04-1 (Apr 21 2022 - 18:07:16)
+Channel 0: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=2048MB
+Channel 1: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=2048MB
+256B stride
+lpddr4_set_rate: change freq to 400000000 mhz 0, 1
+lpddr4_set_rate: change freq to 800000000 mhz 1, 0
+Trying to boot from BOOTROM
+Returning to boot ROM...
+```
+
+- When memory size is abnormal, the memory size detected in the serial port boot output does not match the actual value of the hardware:
+
+```
+U-Boot TPL 2022.04-1 (Apr 21 2022 - 18:07:16)
+Channel 0: LPDDR4, 50MHz
+BW=32 Col=10 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=2048MB
+Channel 1: LPDDR4, 50MHz
+BW=32 Col=9 Bk=8 CS0 Row=16/15 CS=1 Die BW=16 Size=768MB
+no stride
+lpddr4_set_rate: change freq to 400000000 mhz 0, 1
+lpddr4_set_rate: change freq to 800000000 mhz 1, 0
+Trying to boot from BOOTROM
+Returning to boot ROM...
+```
+
+- Your affected product uses Micron memory.
+- The Manjaro image you are using is: [`Manjaro-ARM-minimal-rockpi4b-22.06.img.xz`](https://github.com/manjaro-arm/rockpi4b-images/releases/download/22.06/Manjaro-ARM-minimal-rockpi4b-22.06.img.xz)
+
+### Cause
+
+Older versions of `U-Boot` do not support Micron memory and do not initialize the hardware correctly.
+
+### Affected versions
+
+The following `U-Boot` versions have been tested by Radxa and confirmed to be incompatible with Micron memory:
+
+- `U-Boot 2022.04-1 (Apr 21 2022 - 18:07:16 +0000) Manjaro Linux ARM`
+
+Affected Micron memory has the following silkscreen printed on it:
+
+- IPF47 D9XRR
+
+The following Micron memories have not been found to be affected by this issue at this time:
+
+- ISE77 D9WGB
+
+::::caution
+This is a non-exhaustive list. If you find another affected version or memory model, please send it to us via the `Edit this page` at the bottom.
+::::
+
+### Solution
+
+Manjaro is not an officially supported operating system by Radxa. Please contact Manjaro for help updating the bootloader.
+
+When using the official RadxaOS release [`rock-4se_debian_bullseye_kde_b38.img.xz`](https://github.com/radxa-build/rock-4se/releases/download/b38/rock-4se_debian_bullseye_kde_b38.img.xz), the affected memory is recognized and works normally.
+
+### Workaround
+
+::::caution
+Manjaro is not an officially supported operating system by Radxa. The following workaround is only intended to verify that the problem experienced by the user is not a hardware quality issue, and Radxa is not responsible for any problems that may result from using this workaround in other scenarios.
+::::
+
+You can update the `U-Boot` memory initialization code within your existing system image or system installation device with the following command. This command can also be executed within ROCK 4B after it is booted normally.
+
+Replace the parameter used by the last command to the storage target you want to update.
+
+```bash
+curl https://dl.radxa.com/rockpi4/troubleshooting/rock-4ab-uboot-2022-manjaro-idbloader.tar.gz | tar xzv
+sudo ./setup.sh update_idbloader ___/dev/sdX_or_/dev/mmcblkX_or_system.img___
+```
+
+</details>
