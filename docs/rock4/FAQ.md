@@ -19,9 +19,9 @@ import { Details } from "@site/src/utils/docs";
 但是如果您的系统已经预装了 `rsetup`，请使用上面提到的通过 rsetup 进行在线更新的方法进行系统升级，使用绕过的方式可能会后续在线升级过程中产生异常。
 :::
 
-<Details summary='ROCK 4SE 旧系统在旧的硬件版本上正常运行，但是在新的硬件版本 V1.53 上无法正常启动, 串口最终输出为 "ERR"'>
+<details><summary>ROCK 4SE 旧系统在旧的硬件版本上正常运行，但是在新的硬件版本 V1.53 上无法正常启动, 串口最终输出为 "ERR"</summary>
 
-#### 现象
+### 现象
 
 - 串口最后输出类似以下内容：
 
@@ -51,11 +51,11 @@ DRAM:  3.9 GiB
 
 - 您受影响的产品使用的是 Micron 内存。
 
-#### 原因
+### 原因
 
 旧版本的 `U-Boot` 不支持 Micron 内存，无法完成硬件初始化。
 
-#### 涉及版本
+### 涉及版本
 
 以下 `U-Boot` 版本已经过瑞莎测试，确认为与 Micron 内存不兼容：
 
@@ -66,7 +66,7 @@ DRAM:  3.9 GiB
 这是一个不完全的列表。如果您发现了有其他受影响的版本或内存型号，请通过最下方的`编辑此页`向我们反馈。
 ::::
 
-#### 绕过方案
+### 绕过方案
 
 您可以通过以下命令来更新您现有的系统镜像或系统安装设备内的 `U-Boot` 内存初始化代码。此命令也可在正常启动后的 ROCK 4SE 内执行。
 
@@ -77,4 +77,4 @@ curl https://dl.radxa.com/rockpi4/troubleshooting/rock-4ab-uboot-2017-idbloader.
 sudo ./setup.sh update_idbloader ___/dev/sdX_or_/dev/mmcblkX_or_system.img___
 ```
 
-</Details>
+</details>
