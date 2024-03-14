@@ -1,8 +1,8 @@
 ---
-sidebar_position: 10
+sidebar_position: 1
 ---
 
-# 新手入门
+# 快速上手
 
 开始你的Radxa 3C之旅
 
