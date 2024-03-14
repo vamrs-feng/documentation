@@ -45,7 +45,7 @@ sidebar_position: 1
     </tr>
     <tr>
         <td align="center">Display</td>
-        <td colspan="2" align="center">Provide Micro HDMI Interface：Supports 1080p60 output</td>
+        <td colspan="2" align="center">Provides Micro HDMI interface: supports 4K@60fps output<br/>1x2 lane MIPI DSI</td>
     </tr>
     <tr>
         <td align="center">Ethernet</td>
@@ -57,11 +57,11 @@ sidebar_position: 1
     </tr>
     <tr>
         <td align="center">USB</td>
-        <td colspan="2" align="center">USB 2.0 Type-C OTG x1<br/>USB 3.0 Type-C HOST x1</td>
+        <td colspan="2" align="center">2x USB 2.0 HOST ports<br/>1x USB 3.0 HOST port<br/>1x USB 3.0 OTG/HOST port</td>
     </tr>
     <tr>
         <td align="center">Camera</td>
-        <td colspan="2" align="center">1x4 lane MIPI CSI</td>
+        <td colspan="2" align="center">1x2 lane MIPI CSI</td>
     </tr>
     <tr>
         <td align="center">Others</td>
