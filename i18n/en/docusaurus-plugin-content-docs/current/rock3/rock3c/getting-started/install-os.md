@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 3
 ---
 
 import InstallOS from "../../../common/general/\_install-os.mdx";
