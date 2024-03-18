@@ -21,13 +21,23 @@ RADXA NX5 IO comes with two 2-lane CSI interfaces. The following is a list of cu
     <th>resolution</th>
   </tr>
   <tr>
+    <td>OKDO 5MP Camera</td>
+    <td>OV5647</td>
+    <td>5 megapixels</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi Camera V1.3</td>
+    <td>OV5647</td>
+    <td>5 megapixels</td>
+  </tr>
+  <tr>
     <td>Raspberry Pi Camera V2</td>
     <td>IMX219</td>
     <td>8 megapixels</td>
   </tr>
 </table>
 
-For more information please refer to [raspberry_camera_v2](../accessories/raspberry_camera_v2).
+For more information please refer to [camera accessories](../accessories/camera).
 
 ## WIFI/BT
 

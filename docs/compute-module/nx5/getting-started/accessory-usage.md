@@ -21,13 +21,23 @@ RADXA NX5 IO 带有两个 2-lane 的 CSI 接口。以下是目前支持的摄像
     <th>分辨率</th>
   </tr>
   <tr>
+    <td>OKDO 5MP Camera</td>
+    <td>OV5647</td>
+    <td>500万像素</td>
+  </tr>
+  <tr>
+    <td>Raspberry Pi Camera V1.3</td>
+    <td>OV5647</td>
+    <td>500万像素</td>
+  </tr>
+  <tr>
     <td>Raspberry Pi Camera V2</td>
     <td>IMX219</td>
     <td>800万像素</td>
   </tr>
 </table>
 
-更多相关信息请参考 [树莓派 Camera v2](../accessories/raspberry_camera_v2)。
+更多相关信息请参考 [摄像头配件](../accessories/camera)。
 
 ## WIFI/BT
 
